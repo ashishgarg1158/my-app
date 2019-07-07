@@ -16,4 +16,14 @@ node {
     Regards,
     Ashish''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'ashishgarg.pce.1990@gmail.com'
   }
+  
+  stage('Slack Notification'){
+    slackSend baseUrl: 'https://hooks.slack.com/services/', 
+    channel: '#jenkins-pipeline-demo', 
+    color: 'good', iconEmoji: '', 
+    message: 'Welcome to Jenkins Slack!!!', 
+    teamDomain: 'Ashish-Team', 
+    tokenCredentialId: 'slack-demo', 
+    username: ''
+  }
 }
